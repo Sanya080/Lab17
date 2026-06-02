@@ -1,0 +1,25 @@
+import turtle
+t = turtle.Turtle()
+t.speed(0)
+side = 120
+half = side / 2
+corners = [
+    (-half, -half),
+    (half, -half),
+    (half, half),
+    (-half, half)
+]
+colors = ["red", "green", "blue", "black"]
+t.penup()
+t.goto(corners[0])
+t.pendown()
+for i in range(4):
+    t.pencolor(colors[i])
+    t.goto(corners[(i + 1) % 4])
+for i in range(4):
+    t.penup()
+    t.goto(0, 0)
+    t.pendown()
+    t.pencolor(colors[i])
+    t.goto(corners[i])
+turtle.done()
